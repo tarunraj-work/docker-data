@@ -5,6 +5,7 @@ FROM pytorch/pytorch:latest
 RUN apt-get -y update
 RUN apt-get -y install git
 
+
 # base libs
 RUN pip install \
     scikit-learn \
