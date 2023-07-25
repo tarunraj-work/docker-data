@@ -1,10 +1,8 @@
 # official pytorch + GPU image
-FROM pytorch/pytorch:latest
+FROM jupyter/base-notebook:latest
 
-# install git
 RUN apt-get -y update
 RUN apt-get -y install git
-
 
 # base libs
 RUN pip install \
@@ -14,9 +12,8 @@ RUN pip install \
     jupyterlab \
     jupyterlab_widgets \
     "ipywidgets>=7,<8" \
-    jupyter-dash
-    
-
+    jupyter-dash \
+    ipykernel
 # install stable diffusion from source
 RUN pip install git+https://github.com/huggingface/diffusers.git@main
 
